@@ -60,6 +60,7 @@ object spark {
 
 ### TL;DR
 
+- Download [`aws-java-sdk-1.7.4.jar`](http://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk/1.7.4) and [`hadoop-aws-2.7.1.jar`](http://mvnrepository.com/artifact/org.apache.hadoop/hadoop-aws/2.7.1) 
 - Add the following lines to [`spark-defaults.conf`](../resources/spark-defaults.conf):
 
 ```

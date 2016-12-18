@@ -72,14 +72,15 @@ if __name__ == "__main__":
 
 ### TL;DR
 
-- Add the following lines to [`spark-defaults.conf`](../resources/spark-defaults.conf):
+- download [`aws-java-sdk-1.7.4.jar`](http://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk/1.7.4) and [`hadoop-aws-2.7.1.jar`](http://mvnrepository.com/artifact/org.apache.hadoop/hadoop-aws/2.7.1) 
+- add the following lines to [`spark-defaults.conf`](../resources/spark-defaults.conf):
 
 ```
 spark.hadoop.fs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem
 spark.jars=/path/to/hadoop-aws-2.7.1.jar,/path/to/aws-java-sdk-1.7.4.jar
 ```
 
-- Set environmental variables:
+- set environmental variables:
 
 ```
 export SPARK_HOME=/path/to/spark
