@@ -3,9 +3,9 @@
 Tips are aggregated from [this blogpost](http://deploymentzone.com/2015/12/20/s3a-on-spark-on-aws-ec2/).
 
 1. add dependency to project: `aws-java-sdk 1.7.4.jar`
-    - add `libraryDependencies += "com.amazonaws" % "aws-java-sdk" % "1.7.4"` to `build.sbt`
-2. add `hadoop-aws 2.7.1.jar` to classpath
-    - _Project Structure..._ > _Global Libraries_ > add `hadoop-aws 2.7.1.jar`
+    - add `libraryDependencies += "com.amazonaws" % "aws-java-sdk" % "1.7.4"` to [`build.sbt`](build.sbt)
+2. add dependency to project: `hadoop-aws 2.7.1.jar` 
+    - add `libraryDependencies += "org.apache.hadoop" % "hadoop-aws" % "2.7.1"` to [`build.sbt`](build.sbt)
 3. specify s3a implementation, either ...
     - ... in code: 
     ``` scala
@@ -15,7 +15,7 @@ Tips are aggregated from [this blogpost](http://deploymentzone.com/2015/12/20/s3
 
     val sc = new SparkContext(conf)
     ```
-    - ... or in `SPARK_HOME/conf/spark-defaults.conf`:
+    - ... or in [`SPARK_HOME/conf/spark-defaults.conf`](../resources/spark-defaults.conf):
     ```
     spark.hadoop.fs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem
     ```
@@ -58,7 +58,22 @@ object spark {
 }
 ```
 
-### Run from shell
+### TL;DR
+
+- Add the following lines to [`spark-defaults.conf`](../resources/spark-defaults.conf):
+
+```
+spark.hadoop.fs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem
+spark.jars=/path/to/hadoop-aws-2.7.1.jar,/path/to/aws-java-sdk-1.7.4.jar
+```
+
+- Set environmental variables:
+
+```
+export SPARK_HOME=/path/to/spark
+```
+
+- run application using sbt:
 
 `AWS_ACCESS_KEY_ID=... AWS_SECRET_ACCESS_KEY=... sbt run`
      

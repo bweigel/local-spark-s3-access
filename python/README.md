@@ -11,7 +11,7 @@
 
 1. Add [`aws-java-sdk-1.7.4.jar`](http://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk/1.7.4) and [`hadoop-aws-2.7.1.jar`](http://mvnrepository.com/artifact/org.apache.hadoop/hadoop-aws/2.7.1) to classpath using `spark.jars` setting in `spark-defaults.conf`
 2. Set `spark.hadoop.fs.s3a.impl` to use correct implementation in `spark-defaults.conf` 
-    - => resulting `$SPARK_HOME/conf/spark-defaults.conf`:
+    - => resulting [`$SPARK_HOME/conf/spark-defaults.conf`](../resources/spark-defaults.conf):
         ```
         spark.jars=/home/bweigel/Public/s3-jars/hadoop-aws-2.7.1.jar,/home/bweigel/Public/s3-jars/aws-jav$
         spark.hadoop.fs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem
@@ -70,6 +70,23 @@ if __name__ == "__main__":
     sparkly()
 ```
 
-### Run script from shell
+### TL;DR
+
+- Add the following lines to [`spark-defaults.conf`](../resources/spark-defaults.conf):
+
+```
+spark.hadoop.fs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem
+spark.jars=/path/to/hadoop-aws-2.7.1.jar,/path/to/aws-java-sdk-1.7.4.jar
+```
+
+- Set environmental variables:
+
+```
+export SPARK_HOME=/path/to/spark
+export PYTHONPATH=$PYTHONPATH:$SPARKHOME/python
+export PYSPARK_PYTHON=/path/to/python/bin/python
+```
+
+- run script:
 
 `AWS_ACCESS_KEY_ID=... AWS_SECRET_ACCESS_KEY=... $PYSPARK_PYTHON src/spark.py`
