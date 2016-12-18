@@ -25,10 +25,10 @@ __Setting environmental variables in IntelliJ__
     
 Use _Edit Run Configuration_ to set environmental variables or start intellij from shell, where you first have to export the environmental variables:
     
-    ```
-    $ export SPARK_HOME=/path/to/spark
-    $ export PYTHONPATH=$PYTHONPATH:$SPARK_HOME/python
-    $ export AWS_ACCESS_KEY_ID=...
-    $ export AWS_SECRET_ACCESS_KEY=...
-    $ ./path/to/idea/bin/idea.sh
-    ```
+```
+$ export SPARK_HOME=/path/to/spark
+$ export PYTHONPATH=$PYTHONPATH:$SPARK_HOME/python
+$ export AWS_ACCESS_KEY_ID=...
+$ export AWS_SECRET_ACCESS_KEY=...
+$ ./path/to/idea/bin/idea.sh
+```
