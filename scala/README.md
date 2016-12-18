@@ -2,9 +2,9 @@
 
 Tips are aggregated from [this blogpost](http://deploymentzone.com/2015/12/20/s3a-on-spark-on-aws-ec2/).
 
-1. add dependency to project: `aws-java-sdk 1.7.4.jar`
+1. add dependency to project: [`aws-java-sdk-1.7.4.jar`](http://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk/1.7.4) 
     - add `libraryDependencies += "com.amazonaws" % "aws-java-sdk" % "1.7.4"` to [`build.sbt`](build.sbt)
-2. add dependency to project: `hadoop-aws 2.7.1.jar` 
+2. add dependency to project: [`hadoop-aws-2.7.1.jar`](http://mvnrepository.com/artifact/org.apache.hadoop/hadoop-aws/2.7.1)  
     - add `libraryDependencies += "org.apache.hadoop" % "hadoop-aws" % "2.7.1"` to [`build.sbt`](build.sbt)
 3. specify s3a implementation, either ...
     - ... in code: 
