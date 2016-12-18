@@ -28,5 +28,5 @@ We went through some pain and decided to put that aspect on ice for the time bei
 Since I have spent some time banging my head, I tought I might make it easier on some people by providing some 
 easy examples and verbose comments. 
 
-I have provided examples and readmes both for [Scala](python) and [Python](scala).
+I have provided examples and readmes both for [Scala](scala) and [Python](python).
 I hope this helps some people and wish you luck  with your big data infrastructure!
