@@ -14,14 +14,17 @@ The same method on a local machine with a spark installation proved as quite cum
 AttributeError: 'SparkConf' object has no attribute '_get_object_id'
 ```
 > comment here
+
 ```
 java.lang.RuntimeException: java.lang.ClassNotFoundException: Class org.apache.hadoop.fs.s3a.S3AFileSystem not found
 ```
 > comment here
+
 ```
 java.io.IOException: No FileSystem for scheme: s3a
 ``` 
 > comment here
+
 ```
 java.lang.NoSuchMethodError: com.amazonaws.services.s3.transfer.TransferManager.<init>(Lcom/amazonaws/services/s3/AmazonS3;Ljava/util/concurrent/ThreadPoolExecutor;)V
 ```
