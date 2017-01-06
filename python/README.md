@@ -78,8 +78,24 @@ if __name__ == "__main__":
 ```
 spark.hadoop.fs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem
 spark.jars=/path/to/hadoop-aws-2.7.1.jar,/path/to/aws-java-sdk-1.7.4.jar
+spark.hadoop.fs.s3a.endpoint=s3-eu-central-1.amazonaws.com
+spark.executor.extraJavaOptions=-Dcom.amazonaws.services.s3.enableV4=true
+spark.driver.extraJavaOptions=-Dcom.amazonaws.services.s3.enableV4=true
+
 ```
 
+- add the following to `$HADOOP_CONF_DIR/core-site.xml`:
+
+``` xml
+<configuration>
+
+    <property>
+        <name>fs.s3a.endpoint</name>
+        <value>s3.eu-central-1.amazonaws.com</value>
+    </property>
+
+</configuration>
+```
 - set environmental variables:
 
 ```
