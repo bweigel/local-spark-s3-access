@@ -14,14 +14,14 @@
 3. (for AWS S3 Frankfurt access) you need to use signature version 4 and specify the correct s3a endpoint. in [`$SPARK_HOME/conf/spark-defaults.conf`](../resources/spark-defaults.conf)...
     - set `spark.executor.extraJavaOptions=-Dcom.amazonaws.services.s3.enableV4=true` and `spark.driver.extraJavaOptions=-Dcom.amazonaws.services.s3.enableV4=true`
     - set `spark.hadoop.fs.s3a.endpoint=s3-eu-central-1.amazonaws.com`
-  - the resulting [`$SPARK_HOME/conf/spark-defaults.conf`](../resources/spark-defaults.conf) should look like this:  
-      ```
-      spark.hadoop.fs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem
-      spark.jars=/path/to/hadoop-aws-2.7.1.jar,/path/to/aws-java-sdk-1.7.4.jar
-      spark.hadoop.fs.s3a.endpoint=s3-eu-central-1.amazonaws.com
-      spark.executor.extraJavaOptions=-Dcom.amazonaws.services.s3.enableV4=true
-      spark.driver.extraJavaOptions=-Dcom.amazonaws.services.s3.enableV4=true
-      ```
+- the resulting [`$SPARK_HOME/conf/spark-defaults.conf`](../resources/spark-defaults.conf) should look like this:  
+  ```
+  spark.hadoop.fs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem
+  spark.jars=/path/to/hadoop-aws-2.7.1.jar,/path/to/aws-java-sdk-1.7.4.jar
+  spark.hadoop.fs.s3a.endpoint=s3-eu-central-1.amazonaws.com
+  spark.executor.extraJavaOptions=-Dcom.amazonaws.services.s3.enableV4=true
+  spark.driver.extraJavaOptions=-Dcom.amazonaws.services.s3.enableV4=true
+  ```
 4. set correct environmental variables:        
     1. set aws credentials (`AWS_ACCESS_KEY_ID` & `AWS_SECRET_ACCESS_KEY`)  
     2. set `SPARK_HOME` to `/path/to/spark`
