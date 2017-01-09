@@ -1,15 +1,14 @@
 from pyspark import SparkContext, SparkConf
 
-
 def sparkly():
-    logFile = "s3a://elasticmapreduce/samples/wordcount/wordSplitter.py"
+    #logFile = "s3a://elasticmapreduce/samples/wordcount/wordSplitter.py"
+    logFile = "s3a://europace.reporting/banking-batch.csv"
 
     conf = SparkConf()\
         .setAppName("Simple Application")\
         .setMaster("local")
 
-    #sc = SparkContext(conf)                    # for whatever reason, but this will not work
-    sc = SparkContext("local", "simpleApp")     # this will however...
+    sc = SparkContext().getOrCreate(conf)
 
     logData = sc.textFile(logFile).cache()
 
